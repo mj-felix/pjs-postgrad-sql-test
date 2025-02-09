@@ -1072,7 +1072,6 @@ SELECT
     LastName,
     DateOfBirth
 FROM Students
--- using date range for more efficient indexing
 WHERE DateOfBirth >= '2000-01-01' 
     AND DateOfBirth < '2001-01-01';
 /* RESULTS:
