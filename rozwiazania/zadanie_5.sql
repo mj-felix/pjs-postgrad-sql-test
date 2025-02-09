@@ -14,8 +14,11 @@ SELECT
     COUNT(*) AS total_professors
 FROM Professors;
 /* RESULTS:
-min_salary	max_salary	avg_salary	total_salary	total_professors
-5000	7900	6676.67	200300	30
++------------+------------+------------+--------------+------------------+
+| min_salary | max_salary | avg_salary | total_salary | total_professors |
++------------+------------+------------+--------------+------------------+
+| 5000       | 7900       | 6676.67    | 200300       | 30               |
++------------+------------+------------+--------------+------------------+
 */
 
 /*
@@ -30,16 +33,19 @@ FROM Students
 GROUP BY birth_year
 ORDER BY birth_year;
 /* RESULTS:
-birth_year	number_of_students
-1997	24
-1998	37
-1999	48
-2000	38
-2001	37
-2002	26
-2003	38
-2004	31
-2005	21
++------------+--------------------+
+| birth_year | number_of_students |
++------------+--------------------+
+| 1997       | 24                 |
+| 1998       | 37                 |
+| 1999       | 48                 |
+| 2000       | 38                 |
+| 2001       | 37                 |
+| 2002       | 26                 |
+| 2003       | 38                 |
+| 2004       | 31                 |
+| 2005       | 21                 |
++------------+--------------------+
 */
 
 /*
@@ -58,27 +64,30 @@ JOIN Programs p ON s.ProgramId = p.ProgramId
 GROUP BY p.ProgramId, p.ProgramName
 ORDER BY p.ProgramId;
 /* RESULTS:
-program_id	program_name	three_year_tuition_total	number_of_students
-1	Computer Science	169200	11
-2	Mathematics	210000	15
-3	Physics	300000	20
-4	English	217200	15
-5	History	174600	12
-6	Biology	209400	14
-7	Chemistry	277200	19
-8	Economics	207600	14
-9	Psychology	177000	12
-10	Sociology	344400	23
-11	Business Administration	292800	19
-12	Political Science	178200	13
-13	Environmental Science	260400	18
-14	Art History	206400	14
-15	Anthropology	258600	17
-16	Music	170400	11
-17	Philosophy	193800	14
-18	Theater Studies	123000	8
-19	Film and Media Studies	225000	16
-20	Health Sciences	221400	15
++------------+-------------------------+--------------------------+--------------------+
+| program_id | program_name            | three_year_tuition_total | number_of_students |
++------------+-------------------------+--------------------------+--------------------+
+| 1          | Computer Science        | 169200                   | 11                 |
+| 2          | Mathematics             | 210000                   | 15                 |
+| 3          | Physics                 | 300000                   | 20                 |
+| 4          | English                 | 217200                   | 15                 |
+| 5          | History                 | 174600                   | 12                 |
+| 6          | Biology                 | 209400                   | 14                 |
+| 7          | Chemistry               | 277200                   | 19                 |
+| 8          | Economics               | 207600                   | 14                 |
+| 9          | Psychology              | 177000                   | 12                 |
+| 10         | Sociology               | 344400                   | 23                 |
+| 11         | Business Administration | 292800                   | 19                 |
+| 12         | Political Science       | 178200                   | 13                 |
+| 13         | Environmental Science   | 260400                   | 18                 |
+| 14         | Art History             | 206400                   | 14                 |
+| 15         | Anthropology            | 258600                   | 17                 |
+| 16         | Music                   | 170400                   | 11                 |
+| 17         | Philosophy              | 193800                   | 14                 |
+| 18         | Theater Studies         | 123000                   | 8                  |
+| 19         | Film and Media Studies  | 225000                   | 16                 |
+| 20         | Health Sciences         | 221400                   | 15                 |
++------------+-------------------------+--------------------------+--------------------+
 */
 
 /*
@@ -99,15 +108,18 @@ GROUP BY d.DepartmentId, d.DepartmentName
 HAVING average_monthly_salary > 3000
 ORDER BY average_monthly_salary DESC;
 /* RESULTS:
-department_name	average_monthly_salary
-Sociology	7600
-Biology	7400
-Physics	6850
-History	6800
-English	6700
-Psychology	6660
-Computer Science	6600
-Mathematics	6600
-Economics	6200
-Chemistry	6100
++------------------+------------------------+
+| department_name  | average_monthly_salary |
++------------------+------------------------+
+| Sociology        | 7600                   |
+| Biology          | 7400                   |
+| Physics          | 6850                   |
+| History          | 6800                   |
+| English          | 6700                   |
+| Psychology       | 6660                   |
+| Computer Science | 6600                   |
+| Mathematics      | 6600                   |
+| Economics        | 6200                   |
+| Chemistry        | 6100                   |
++------------------+------------------------+
 */
